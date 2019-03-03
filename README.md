@@ -13,6 +13,8 @@ IBM Hackathon
 
 >>According to data set provided, Program is developed to predict production from 2005 to 2013.
 
+>> run with fun.py 
+
 
 README.txt
 Displaying README.txt.
