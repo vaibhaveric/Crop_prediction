@@ -1,0 +1,244 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>Hello, world!</title>
+<style>
+.form-control {
+    display: block;
+    width: 50%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+h1 {
+    font-size: 2.5rem;
+    color: darkgray;
+        padding: 5px;
+        border: #3ea7e1;
+    border-style: double
+}
+body{
+background-image : url("{{url_for('static',filename='one.jpg')}}");
+   height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+ background-size: cover;
+ color: #eceff3;
+
+}
+
+
+
+
+	.monthPicker {
+    background: #33a0a0;
+    box-shadow: 0 1px 5px #696969;
+}
+
+.monthPicker-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px 20px;
+    border-bottom: 1px solid #fff;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.monthPicker-top-action {
+    font-size: 2rem;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    border-radius: 50%;
+    background: none;
+}
+
+.monthPicker-top-action span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.monthPicker-top-action:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.monthPicker-top-current {
+    color: #008080;
+    background: #fff;
+}
+
+.monthPicker-top-current .selectYear {
+    display: none;
+}
+
+.monthPicker-top-current:hover .currentYear {
+    display: none;
+}
+
+.monthPicker-top-current:hover .selectYear {
+    display: inline;
+}
+
+.monthPicker-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    text-align: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.monthPicker-body-month {
+	    width: 40%;
+    line-height: 35px;
+    height: 35px;
+    margin: 5px;
+    vertical-align: middle;
+    text-decoration: none;
+      color: #e6ebf0;
+    /*color: #fff;*/
+    border-radius: 3px;
+    background: #fff;
+    background: none;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% / 3 - 10px);
+    flex: 0 0 calc(100% / 3 - 10px);
+}
+
+.monthPicker-body-month:hover {
+    text-decoration: none;
+    color: #008080;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .34);
+}
+.pp{
+	    font-size: x-large;
+}
+.box{
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+</style>
+
+<script>
+
+
+</script>
+
+  </head>
+
+  <form method="post" action="/predict">
+  	<body>
+   <center><h1 >Crop Prediction</h1></center>
+
+
+<div class="container">
+	<h2 class="text-info"> Model is {{acc}} % accurate</h2>
+  <p class="one"><b>SELECT CROP</b></p>
+  <form action="#">
+    <div class="form-group">
+      <label for="sel1">Select Crop:</label>
+      <select class="form-control" id="sel1" name="crop">
+       <option>Rice</option>
+       <option>Wheat</option>
+       <option>Jowar</option>
+       <option>Bajra</option>
+       <option>Maize</option>
+       <option>Barley</option>
+       <option>Ragi</option>
+       <option>Gram</option>
+       <option>Arhar</option>
+       <option>Moong</option>
+       <option>Masur</option>
+       <option>Urad</option>
+       <option>Potato</option>
+       <option>Sweet Potato</option>
+       <option>Onion</option>
+       <option>Tapioca</option>
+       <option>Brinjal</option>
+      </select>
+</div>
+
+      <label for="sel1" class="one">Enter Weight:</label>
+
+    <div class="form-group">
+    	      <input type="text" class="form-control form-control-md" placeholder="Enter Weight" name="weight" required>
+</div>
+    
+      <label for="sel1" class="one">Select Year:</label>
+<select class="form-control" id="sel1" name="year">
+       
+        <option>2005</option>
+        <option>2006</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+        <option>2013</option>
+       
+      
+      </select>	     
+      <br>
+       <label for="sel1" class="one">Select Month:</label>
+<select class="form-control" id="sel1" name="month">
+        <option>Jan</option>
+        <option>Feb</option>
+        <option>Mar</option>
+        <option>Apr</option>
+         <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>Aug</option>
+         <option>Sept</option>
+        <option>Oct</option>
+        <option>Nov</option>
+        <option>Dec</option>
+      </select>	     
+      <br>
+<div class="form-group">
+
+<button class="btn btn-outline-primary"type="submit">Predict</button>
+</div>
+</form>
+
+<p class="pp">{{ans}}</p>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </form>
+</html>
